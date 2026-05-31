@@ -1,0 +1,23 @@
+.certs-bg {
+  background: linear-gradient(to bottom, transparent, rgba(12,21,37,0.4), transparent);
+}
+.certs-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;
+}
+.cert-card {
+  padding: 32px; border-radius: 18px; position: relative; overflow: hidden;
+  transition: transform 0.3s;
+}
+.cert-card:hover { transform: translateY(-5px); }
+.cert-accent { position: absolute; top: 0; left: 0; right: 0; height: 2px; }
+.cert-issuer {
+  font-family: var(--font-display); font-size: 20px; font-weight: 700; margin-bottom: 20px;
+}
+.cert-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+.cert-item {
+  display: flex; align-items: flex-start; gap: 12px;
+  color: var(--muted); font-size: 14px; line-height: 1.6;
+}
+.cert-bullet {
+  width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; margin-top: 6px;
+}

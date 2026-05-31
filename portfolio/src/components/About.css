@@ -1,0 +1,69 @@
+.about-grid {
+  display: grid; grid-template-columns: 340px 1fr;
+  gap: 64px; align-items: start;
+}
+@media (max-width: 900px) {
+  .about-grid { grid-template-columns: 1fr; gap: 40px; }
+}
+
+.avatar-wrap {
+  position: relative; width: 300px; height: 300px;
+  margin: 0 auto;
+}
+.avatar-ring {
+  position: absolute; inset: -3px; border-radius: 28px;
+  background: linear-gradient(135deg, var(--accent), var(--accent2), var(--accent3));
+  animation: spin-ring 8s linear infinite; z-index: 0;
+}
+.avatar-box {
+  position: relative; z-index: 1;
+  width: 100%; height: 100%; border-radius: 26px;
+  background: linear-gradient(135deg, rgba(56,189,248,0.12), rgba(167,139,250,0.12));
+  border: 1px solid var(--border);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 8px; overflow: hidden;
+}
+.avatar-glow {
+  position: absolute; inset: 0;
+  background: radial-gradient(circle at 35% 35%, rgba(56,189,248,0.15), transparent 60%),
+              radial-gradient(circle at 65% 65%, rgba(167,139,250,0.12), transparent 60%);
+}
+.avatar-initials {
+  font-family: var(--font-display); font-size: 80px; font-weight: 800; letter-spacing: -4px;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  position: relative; z-index: 1;
+}
+.avatar-company {
+  font-family: var(--font-mono); font-size: 12px; color: var(--muted); position: relative; z-index: 1;
+}
+
+.about-para {
+  color: var(--muted); font-size: 16px; line-height: 1.8; margin-bottom: 16px;
+}
+.about-para strong { color: var(--text); }
+
+.edu-section { margin-top: 32px; }
+.edu-label {
+  font-family: var(--font-mono); font-size: 11px; color: var(--accent);
+  letter-spacing: 3px; text-transform: uppercase; margin-bottom: 20px;
+}
+.edu-item {
+  display: flex; gap: 16px; margin-bottom: 20px; position: relative;
+  padding-left: 8px;
+}
+.edu-dot {
+  width: 10px; height: 10px; border-radius: 50%;
+  background: var(--accent); flex-shrink: 0; margin-top: 5px;
+  box-shadow: 0 0 0 3px rgba(56,189,248,0.2);
+}
+.edu-degree { font-weight: 600; font-size: 15px; margin-bottom: 2px; }
+.edu-school { font-size: 13px; color: var(--muted); margin-bottom: 4px; }
+.edu-meta {
+  display: flex; gap: 12px; align-items: center;
+  font-family: var(--font-mono); font-size: 12px; color: var(--muted);
+}
+.edu-score {
+  color: var(--accent3); background: rgba(52,211,153,0.1);
+  border: 1px solid rgba(52,211,153,0.2); padding: 2px 10px; border-radius: 20px;
+}
