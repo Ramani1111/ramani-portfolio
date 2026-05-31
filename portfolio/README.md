@@ -1,54 +1,54 @@
 # Ramani S — Portfolio Website
 
-## 🚀 Setup & Run (3 steps only)
+## Overview
 
-### Step 1 — Install Node.js
-Download from: https://nodejs.org  
-(Choose LTS version)
-
-### Step 2 — Install dependencies
-Open terminal inside this folder and run:
-```
-npm install
-```
-
-### Step 3 — Start the website
-```
-npm start
-```
-Browser-ல் automatically http://localhost:3000
+A modern, responsive portfolio website built with React.js to showcase professional experience, technical skills, projects, certifications, and contact information.
 
 ---
 
-## 📁 Folder Structure
+## Installation
 
+### Prerequisites
+
+* Node.js (LTS Version)
+* npm
+
+Download Node.js from:
+https://nodejs.org
+
+### Install Dependencies
+
+```bash
+npm install
 ```
+
+### Run the Development Server
+
+```bash
+npm start
+```
+
+The application will be available at:
+
+```text
+http://localhost:3000
+```
+
+---
+
+## Project Structure
+
+```text
 portfolio/
 ├── public/
 │   ├── index.html
-│   └── RAMANI_RESUME.pdf     ← 
+│   └── RAMANI_RESUME.pdf
 │
 ├── src/
 │   ├── components/
-│   │   ├── Navbar.jsx + Navbar.css
-│   │   ├── Hero.jsx + Hero.css
-│   │   ├── About.jsx + About.css
-│   │   ├── Skills.jsx + Skills.css
-│   │   ├── Projects.jsx + Projects.css
-│   │   ├── Certifications.jsx + Certifications.css
-│   │   ├── Contact.jsx + Contact.css
-│   │   ├── Footer.jsx + Footer.css
-│   │   └── Icons.jsx
-│   │
 │   ├── data/
-│   │   └── data.js       
-│   │
 │   ├── hooks/
-│   │   └── useTyped.js
-│   │
 │   ├── styles/
-│   │   └── global.css
-│   │
 │   ├── App.js
 │   └── index.js
 │
@@ -57,25 +57,72 @@ portfolio/
 
 ---
 
-## ✏️ Customization
+## Customization
 
-### Resume Download button 
-`public/` folder-ல் உங்கள் resume file-ஐ `RAMANI_RESUME.pdf` 
-### Details
-`src/data/data.js` 
+### Resume
+
+Replace the file below with the latest version of your resume:
+
+```text
+public/RAMANI_RESUME.pdf
+```
+
+### Personal Information
+
+Update personal details, project information, skills, certifications, and contact links in:
+
+```text
+src/data/data.js
+```
 
 ---
 
-## 🌐 Deploy (Free Hosting)
+## Features
 
-### Netlify (Easiest):
-1. `npm run build` — 
-2. netlify.com போங்க
-3. `build/`
-4. Done! Live URL got
+* Responsive Design
+* Modern User Interface
+* Interactive Animations
+* Project Showcase
+* Skills & Certifications Section
+* Resume Download
+* Contact Section
+* Social Media Integration
 
-### Vercel:
-```
+---
+
+## Deployment
+
+### Vercel
+
+```bash
 npm install -g vercel
 vercel
 ```
+
+### Netlify
+
+```bash
+npm run build
+```
+
+Upload the generated `build` folder to Netlify.
+
+---
+
+## Technologies Used
+
+* React.js
+* JavaScript (ES6+)
+* HTML5
+* CSS3
+* Git & GitHub
+
+---
+
+## Author
+
+**Ramani S**
+
+Junior Software Developer
+
+Amshuhu iTech Solution Pvt Ltd
