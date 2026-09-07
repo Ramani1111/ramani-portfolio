@@ -1,0 +1,457 @@
+.stats-section {
+  position: relative;
+  overflow: hidden;
+}
+.stats-inner {
+  position: relative;
+}
+.stats-head {
+  text-align: center;
+  margin-bottom: 56px;
+}
+.stats-desc {
+  margin: 0 auto 18px;
+}
+
+/* ===== Skeleton loader ===== */
+.gh-skeleton {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+@media (max-width: 900px) {
+  .gh-skeleton {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  .gh-skeleton {
+    grid-template-columns: 1fr;
+  }
+}
+.gh-skel-card {
+  height: 240px;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(
+    90deg,
+    var(--glass-bg),
+    rgba(56, 189, 248, 0.08),
+    var(--glass-bg)
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.6s linear infinite;
+  border: 1px solid var(--border);
+}
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* ===== Error state ===== */
+.gh-error {
+  padding: 32px;
+  border-radius: var(--radius-lg);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-secondary);
+}
+.gh-error strong {
+  color: var(--text);
+  font-size: 18px;
+}
+
+/* ===== Main grid — 2x2 with identity spanning 2 rows ===== */
+.gh-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 24px;
+}
+.gh-card {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+.gh-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--border-strong);
+}
+.gh-card-title {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  color: var(--text);
+}
+.gh-card-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.gh-card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+  transition: gap 0.2s;
+}
+.gh-card-link:hover {
+  gap: 7px;
+}
+.gh-empty {
+  color: var(--muted);
+  font-size: 13px;
+  font-style: italic;
+}
+
+/* ===== Card 1: Identity (spans 2 rows on left) ===== */
+.gh-card-identity {
+  grid-row: span 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 32px 24px;
+  position: relative;
+  overflow: hidden;
+}
+.gh-card-identity::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    var(--accent),
+    var(--accent-3)
+  );
+}
+.gh-avatar {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--accent);
+  box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.15),
+    0 18px 40px rgba(2, 6, 23, 0.4);
+  margin-bottom: 16px;
+}
+.gh-identity-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+.gh-name-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+.gh-name {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  color: var(--text);
+}
+.gh-handle {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--accent);
+  text-decoration: none;
+  letter-spacing: 0.5px;
+}
+.gh-handle:hover {
+  text-decoration: underline;
+}
+.gh-bio {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin: 4px 0 0;
+  max-width: 280px;
+}
+.gh-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  width: 100%;
+  margin-top: 12px;
+}
+.gh-stat {
+  padding: 12px 6px;
+  border-radius: 12px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  text-align: center;
+}
+.gh-stat-v {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1;
+}
+.gh-stat-k {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 4px;
+}
+.gh-profile-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+  padding: 10px 20px;
+  border-radius: 100px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  color: #050a14;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+:root[data-theme='light'] .gh-profile-btn {
+  color: #fff;
+}
+.gh-profile-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(56, 189, 248, 0.35);
+}
+
+/* ===== Card 2: Languages ===== */
+.gh-langs {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.gh-lang {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.gh-lang-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+}
+.gh-lang-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+.gh-lang-name {
+  flex: 1;
+  color: var(--text);
+  font-weight: 500;
+}
+.gh-lang-count {
+  color: var(--muted);
+  font-size: 11px;
+  font-family: var(--font-mono);
+}
+.gh-lang-bar {
+  height: 4px;
+  border-radius: 2px;
+  background: var(--surface-2);
+  overflow: hidden;
+}
+.gh-lang-fill {
+  display: block;
+  height: 100%;
+  border-radius: 2px;
+  transition: width 0.6s ease;
+}
+
+/* ===== Card 3: Top Repos ===== */
+.gh-repos {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.gh-repo {
+  margin: 0;
+}
+.gh-repo-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  text-decoration: none;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  transition: border-color 0.2s, transform 0.2s, background 0.2s;
+}
+.gh-repo-link:hover {
+  border-color: var(--accent);
+  background: rgba(56, 189, 248, 0.08);
+  transform: translateX(3px);
+}
+.gh-repo-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.gh-repo-body {
+  flex: 1;
+  min-width: 0;
+}
+.gh-repo-name {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text);
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.gh-repo-desc {
+  font-size: 11px;
+  color: var(--muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: 2px;
+}
+.gh-repo-meta {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+}
+.gh-repo-stat {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--muted);
+}
+
+/* ===== Card 4: Recent activity (full width) ===== */
+.gh-card-recent {
+  grid-column: span 2;
+}
+.gh-recent {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+@media (max-width: 600px) {
+  .gh-recent {
+    grid-template-columns: 1fr;
+  }
+}
+.gh-recent-item {
+  margin: 0;
+}
+.gh-recent-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  text-decoration: none;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  transition: border-color 0.2s, transform 0.2s;
+}
+.gh-recent-link:hover {
+  border-color: var(--accent);
+  transform: translateX(3px);
+}
+.gh-recent-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.gh-recent-body {
+  flex: 1;
+  min-width: 0;
+}
+.gh-recent-name {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--text);
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.gh-recent-meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 3px;
+}
+.dot-sep {
+  opacity: 0.5;
+}
+.gh-recent-arrow {
+  color: var(--muted);
+  flex-shrink: 0;
+  transition: color 0.2s, transform 0.2s;
+}
+.gh-recent-link:hover .gh-recent-arrow {
+  color: var(--accent);
+  transform: translate(2px, -2px);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+  .gh-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .gh-card-identity {
+    grid-column: span 2;
+    grid-row: auto;
+  }
+  .gh-card-recent {
+    grid-column: span 2;
+  }
+}
+@media (max-width: 600px) {
+  .gh-grid {
+    grid-template-columns: 1fr;
+  }
+  .gh-card-identity,
+  .gh-card-recent {
+    grid-column: span 1;
+  }
+}

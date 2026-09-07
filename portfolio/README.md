@@ -77,52 +77,23 @@ src/data/data.js
 
 ---
 
-## Features
+## 🌐 Deploy (Free Hosting)
 
-* Responsive Design
-* Modern User Interface
-* Interactive Animations
-* Project Showcase
-* Skills & Certifications Section
-* Resume Download
-* Contact Section
-* Social Media Integration
+This portfolio is ready for production deployment and can be published to a custom domain such as `ramanis.dev` once hosted.
 
----
+### Netlify (Easiest):
+1. `npm run build`
+2. Upload the generated `build/` folder to Netlify
+3. Configure a custom domain in Netlify if you want `ramanis.dev`
 
-## Deployment
-
-### Vercel
-
-```bash
+### Vercel:
+```
 npm install -g vercel
 vercel
 ```
 
-### Netlify
-
-```bash
-npm run build
-```
-
-Upload the generated `build` folder to Netlify.
-
----
-
-## Technologies Used
-
-* React.js
-* JavaScript (ES6+)
-* HTML5
-* CSS3
-* Git & GitHub
-
----
-
-## Author
-
-**Ramani S**
-
-Junior Software Developer
-
-Amshuhu iTech Solution Pvt Ltd
+### Quick notes
+- A working contact form is implemented using a `mailto:` flow.
+- Project cards now include a problem → approach → result case study format.
+- GitHub activity stats are embedded in the portfolio.
+- If you want a custom domain, add it to your hosting provider and point DNS to the deployed site.

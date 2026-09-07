@@ -7,6 +7,16 @@ export function useTyped(words, speed = 80, pause = 1800) {
   const [deleting, setDeleting] = useState(false);
 
   useEffect(() => {
+    if (!words?.length) {
+      setDisplay('');
+      return undefined;
+    }
+    if (wi >= words.length) {
+      setWi(0);
+      setCi(0);
+      setDeleting(false);
+      return undefined;
+    }
     const word = words[wi];
     const delay = deleting ? speed / 2 : speed;
     const timer = setTimeout(() => {
@@ -41,4 +51,31 @@ export function useInView(threshold = 0.15) {
     return () => obs.disconnect();
   }, [threshold]);
   return [ref, inView];
+}
+
+export function usePortfolioData() {
+  const [data, setData] = useState(null);
+  const [refresh, setRefresh] = useState(0);
+
+  useEffect(() => {
+    const STORAGE_KEY = 'ramani_portfolio_data_v1';
+    try {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      if (raw) {
+        setData(JSON.parse(raw));
+      }
+    } catch (e) {
+      console.error('Failed to load portfolio data:', e);
+    }
+  }, [refresh]);
+
+  useEffect(() => {
+    const handleStorageChange = () => {
+      setRefresh(r => r + 1);
+    };
+    window.addEventListener('storage', handleStorageChange);
+    return () => window.removeEventListener('storage', handleStorageChange);
+  }, []);
+
+  return { data, refresh: () => setRefresh(r => r + 1) };
 }

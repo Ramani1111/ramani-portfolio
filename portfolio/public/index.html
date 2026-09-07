@@ -3,12 +3,32 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#050a14" />
-    <meta name="description" content="Ramani S - Junior Software Developer Portfolio" />
-    <title>Ramani S | Software Developer</title>
+    <meta name="theme-color" content="#060b1a" />
+    <meta name="description" content="Ramani S — Full Stack Developer. Java, React, Angular, Node.js. Based in Sivakasi, Tamil Nadu." />
+    <meta name="author" content="Ramani S" />
+    <meta property="og:title" content="Ramani S | Full Stack Developer" />
+    <meta property="og:description" content="Full Stack Developer — Java, React, Angular, Node.js. Portfolio, projects, and certifications." />
+    <meta property="og:type" content="website" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Mono:wght@300;400;500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <title>Ramani S · Full Stack Developer</title>
+    <script>
+      // Apply saved theme before first paint to avoid a flash.
+      (function () {
+        try {
+          var stored = localStorage.getItem('theme');
+          var prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+          var theme = stored || (prefersLight ? 'light' : 'dark');
+          document.documentElement.setAttribute('data-theme', theme);
+        } catch (e) {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      })();
+    </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
